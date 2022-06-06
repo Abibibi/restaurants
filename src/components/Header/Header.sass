@@ -1,2 +1,59 @@
-svg
-    width: 9rem
+@import "src/styles/media"
+
+header
+    display: flex
+    flex-direction: column
+    gap: 2rem
+
+    @include desktop
+        flex-direction: row
+        align-items: center
+
+    & > svg
+        width: 9rem
+
+    .ais-SearchBox
+        @include desktop
+            flex: 1 0 0
+
+        &-form
+            position: relative
+
+        &-input
+            width: 100%
+            height: 3rem
+            border: 1px solid #c7c7c7
+            border-radius: .3rem
+            padding: 0 3rem
+
+            &:hover
+                border-color: #7b7b7b
+
+        &-input[type="search"]::-webkit-search-decoration,
+        &-input[type="search"]::-webkit-search-cancel-button,
+        &-input[type="search"]::-webkit-search-results-button,
+        &-input[type="search"]::-webkit-search-results-decoration
+            display: none
+
+        &-submit, &-reset
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            display: flex
+            justify-content: center
+            align-items: center
+            border: none
+            height: 100%
+            width: 3rem
+            padding: 0 1rem
+            background-color: transparent
+            cursor: pointer
+
+        &-submit
+            left: 0
+
+        &-reset
+            right: 0
+
+            &[hidden]
+                display: none
