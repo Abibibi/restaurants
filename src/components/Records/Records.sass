@@ -1,0 +1,55 @@
+@import "src/styles/variables"
+
+.records
+    +flex-column
+    align-items: center
+
+    .ais-InfiniteHits
+        &-loadMore
+            display: block
+            margin: auto
+            width: 90%
+            border: 1px solid #8b0303
+            padding: 1rem
+            color: #8b0303
+            font-size: 1.1rem
+            font-weight: 600
+            letter-spacing: .15rem
+
+    .ais-Hits-list
+        +flex-column
+        gap: 2rem
+
+    .ais-Pagination
+        margin: 1rem 0
+
+        &-list
+            +flex
+            gap: .5rem
+            font-family: sans-serif
+
+        &-item
+            padding: .4rem
+
+            &:hover, &--selected
+                border-radius: .2rem
+
+            &:hover
+                background-color: #d0d0d0
+
+            &--selected
+                background-color: #8b0304
+
+                &:hover
+                    background-color: #8b0304
+
+                .ais-Pagination-link
+                    color: #ffffff
+
+            &--previousPage, &--nextPage
+                &:hover
+                    background-color: initial
+
+        &-link
+            text-decoration: none
+            color: initial

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, Hits } from "react-instantsearch-hooks-web";
+import { InstantSearch } from "react-instantsearch-hooks-web";
 
 import Layout from "@/layout";
 import Header from "@/components/Header";
-import Record from "@/components/Record";
+import Records from "@/components/Records";
 
 const searchClient = algoliasearch(
   import.meta.env.VITE_APP_ID,
@@ -19,7 +19,7 @@ const App: FC = () => {
     >
       <Layout>
         <Header />
-        <Hits hitComponent={Record} />
+        <Records />
       </Layout>
     </InstantSearch>
   );

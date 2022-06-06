@@ -23,7 +23,7 @@ const Record: FC<RecordType> = ({ hit }: RecordType) => (
       <div className="record-details-name-stars">
         <h2>{hit.name}</h2>
         <div className="record-details-name-stars-mark">
-          {hit.stars_count}{" "}
+          <span>{hit.stars_count}</span>
           <Rater total={5} rating={hit.stars_count} interactive={false} />
         </div>
       </div>
@@ -35,7 +35,9 @@ const Record: FC<RecordType> = ({ hit }: RecordType) => (
           <ImBubble2 /> {hit.reviews_count}
         </div>
       </div>
-      <div className="price">{hit.price}</div>
+      <div className="record-details-price">
+        {Array.from(Array(hit.price)).map(() => "$")}
+      </div>
     </div>
   </div>
 );
