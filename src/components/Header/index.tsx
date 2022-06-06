@@ -5,9 +5,14 @@ import Logo from "@/ui/logo.svg?component";
 import "./Header.sass";
 
 const Header: FC = () => (
-  <header>
-    <Logo />
-    <SearchBox placeholder="Restaurant name, food type, city..." />
+  <header className="header">
+    <div className="header-logo">
+      <Logo />
+    </div>
+    <div className="header-search">
+      <h1>Experience food.</h1>
+      <SearchBox placeholder="Search by restaurant name, cuisine, city..." />
+    </div>
   </header>
 );
 
