@@ -1,0 +1,55 @@
+@import "src/styles/env"
+
+.ais-Hits-list
+    +flex-column
+    gap: 2rem
+
+.ais-Hits-item
+    padding-bottom: 2rem
+    border-bottom: 1px solid #c7c7c7
+    width: fit-content
+
+.record
+    +flex-column
+    gap: 1rem
+
+    @include tablet-and-desktop
+        flex-direction: row
+
+    &-picture
+        img
+            width: 100%
+
+    &-details
+        +flex-column
+        gap: 1.5rem
+
+        &-type-remove, &-name-stars, &-address-reviews
+            +flex
+            align-items: center
+            justify-content: space-between
+
+        &-type-remove
+            span
+                font-size: .8rem
+
+            &-bin
+                color: red
+                cursor: pointer
+
+        &-name-stars
+            h2
+                font-weight: 600
+
+            .react-rater-star.is-active, .react-rater-star.is-active-half:before
+                color: #e2a400
+
+        &-address-reviews
+
+            &-localization
+                width: 70%
+                line-height: 1.5
+
+            &-count
+                svg
+                    transform: rotate(360deg) scaleX(-1)
