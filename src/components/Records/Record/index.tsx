@@ -10,13 +10,13 @@ import { index } from "@/helpers/algolia";
 import "./Record.sass";
 import DeleteModal from "@/components/Modals/DeleteModal";
 
-const Record: FC<RecordType> = ({ hit }: RecordType) => {
+const Record: FC<RecordType> = ({ hit, resetHits }: RecordType) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   function deleteRecord(): void {
     index.deleteObject(hit.objectID).then(() => {
       setIsModalOpen(false);
-      location.reload();
+      resetHits(hit.objectID);
     });
   }
 

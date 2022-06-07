@@ -110,6 +110,7 @@ section {
 body {
   line-height: 1;
   font-family: Raleway, arial, sans-serif;
+  overflow: scroll;
 }
 ol,
 ul {
@@ -133,4 +134,24 @@ table {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.react-rater-star.is-active,
+.react-rater-star.is-active-half:before {
+  color: #e2a400;
+}
+
+.submit-button {
+  border: 1px solid #8b0303;
+  padding: 1rem;
+  color: #8b0303;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+}
+
+.submit-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

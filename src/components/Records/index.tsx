@@ -34,7 +34,11 @@ const CustomInfiniteHits: FC<UseInfiniteHitsProps> = (
         <Record hit={hit} key={hit.objectID} resetHits={setHitsAfterDeletion} />
       ))}
       {!isLastPage && (
-        <button className="records-show-more" type="button" onClick={showMore}>
+        <button
+          className="submit-button records-show-more"
+          type="button"
+          onClick={showMore}
+        >
           Show more
         </button>
       )}

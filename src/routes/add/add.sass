@@ -1,0 +1,48 @@
+@import "src/styles/env"
+
+.add
+    +flex-center-y
+    flex-direction: column
+
+    h1
+        padding: 1rem 0
+        width: 100%
+        background-color: #00000080
+        text-align: center
+        font-size: 2rem
+        color: #ffffff
+
+    form
+        +flex-column
+        gap: 2rem
+        margin-top: 3rem
+        width: 20rem
+
+        @include tablet-and-desktop
+            justify-content: center
+
+    label
+        +flex-column
+        gap: .5rem
+
+    input
+        padding: .5rem .3rem
+
+    select
+        padding: .6rem
+
+    .react-rater
+        +flex
+        gap: .4rem
+
+        &-star
+            font-size: 1.9rem
+
+    button
+        padding: .7rem
+        cursor: pointer
+
+    .success-message
+        text-align: center
+        color: green
+        font-weight: 600
