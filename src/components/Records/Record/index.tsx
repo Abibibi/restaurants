@@ -1,15 +1,25 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { ImBubble2 } from "react-icons/im";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 
 import { Record as RecordType } from "@/helpers/interfaces";
+import { index } from "@/helpers/algolia";
 
 import "./Record.sass";
+import Modal from "@/components/Modals";
+import DeleteModal from "@/components/Modals/DeleteModal";
 
 const Record: FC<RecordType> = ({ hit }: RecordType) => {
-  function deleteRecord(): void {}
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  function deleteRecord(): void {
+    index.deleteObject(hit.objectID).then(() => {
+      console.log(`${hit.name} a bien été supprimée`);
+      window.location.reload();
+    });
+  }
 
   return (
     <div className="record">
@@ -21,7 +31,7 @@ const Record: FC<RecordType> = ({ hit }: RecordType) => {
           <span>{hit.food_type.toLocaleUpperCase()}</span>
           <div
             className="record-details-type-remove-bin"
-            onClick={deleteRecord}
+            onClick={() => setIsModalOpen(true)}
           >
             <BsTrash />
           </div>
@@ -45,6 +55,12 @@ const Record: FC<RecordType> = ({ hit }: RecordType) => {
           {Array.from(Array(hit.price)).map(() => "$")}
         </div>
       </div>
+
+      <DeleteModal
+        open={isModalOpen}
+        confirm={deleteRecord}
+        cancel={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
