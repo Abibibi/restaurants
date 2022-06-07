@@ -1,5 +1,4 @@
 import { FC } from "react";
-import "./layout.sass";
 
 interface Props {
   children: React.ReactNode;
@@ -7,7 +6,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }: Props) => {
   return (
-    <div className="Layout">
+    <div className="layout">
       <main>{children}</main>
     </div>
   );
