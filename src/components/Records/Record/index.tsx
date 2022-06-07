@@ -8,7 +8,6 @@ import { Record as RecordType } from "@/helpers/interfaces";
 import { index } from "@/helpers/algolia";
 
 import "./Record.sass";
-import Modal from "@/components/Modals";
 import DeleteModal from "@/components/Modals/DeleteModal";
 
 const Record: FC<RecordType> = ({ hit }: RecordType) => {
@@ -16,8 +15,8 @@ const Record: FC<RecordType> = ({ hit }: RecordType) => {
 
   function deleteRecord(): void {
     index.deleteObject(hit.objectID).then(() => {
-      console.log(`${hit.name} a bien été supprimée`);
-      window.location.reload();
+      setIsModalOpen(false);
+      location.reload();
     });
   }
 
