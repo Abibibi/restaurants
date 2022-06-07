@@ -1,0 +1,39 @@
+@import "src/styles/env"
+
+.facets
+    .facet:not(:first-of-type)
+        padding-top: 2rem
+
+    @include tablet-and-desktop
+        margin-left: 2rem
+
+    h3
+        +flex
+        margin-bottom: .8rem
+        text-transform: uppercase
+        font-weight: 600
+
+        svg
+            margin-right: .5rem
+
+    .ais-RefinementList
+        padding-bottom: 2rem
+        border-bottom: 1px solid #c7c7c7
+
+        &-list
+            +flex-column
+            gap: .6rem
+
+        &-label
+            cursor: pointer
+
+        &-labelText
+            margin: 0 .5rem
+
+        &-count
+            border-radius: .2rem
+            padding: .1rem
+            background-color: #ededed
+            font-size: .7rem
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
