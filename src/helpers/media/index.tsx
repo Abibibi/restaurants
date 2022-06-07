@@ -4,19 +4,19 @@ import { useMediaQuery } from "react-responsive";
 import { ChildrenProps } from "../interfaces";
 
 export const Mobile: FC<ChildrenProps> = ({ children }: ChildrenProps) => {
-  const isMobile = useMediaQuery({ maxWidth: 479 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return isMobile ? <>{children}</> : null;
 };
 
 export const Tablet: FC<ChildrenProps> = ({ children }: ChildrenProps) => {
-  const isTablet = useMediaQuery({ minWidth: 480, maxWidth: 1023 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   return isTablet ? <>{children}</> : null;
 };
 
 export const TabletOrDesktop: FC<ChildrenProps> = ({
   children,
 }: ChildrenProps) => {
-  const isTablet = useMediaQuery({ minWidth: 480 });
+  const isTablet = useMediaQuery({ minWidth: 768 });
   return isTablet ? <>{children}</> : null;
 };
 
