@@ -3,15 +3,15 @@ import { InstantSearch } from "react-instantsearch-hooks-web";
 import { BsFilterSquare } from "react-icons/bs";
 
 import Layout from "@/layout";
-import Header from "@/components/Header";
 import Facets from "@/components/Facets";
 import Records from "@/components/Records";
 import FacetsMobile from "@/components/Facets/FacetsMobile";
 
 import { Mobile, TabletOrDesktop } from "@/helpers/media";
-import "./App.sass";
+import "./home.sass";
 
 import { searchClient } from "@/helpers/algolia";
+import Banner from "@/components/Banner";
 
 const App: FC = () => {
   const [isFilter, setIsFilter] = useState<boolean>(false);
@@ -22,8 +22,7 @@ const App: FC = () => {
       indexName={import.meta.env.VITE_INDEX_NAME}
     >
       <Layout>
-        <Header />
-
+        <Banner />
         <Mobile>
           <div className="facets-records-mobile">
             <div className="facets-records-mobile-buttons">
