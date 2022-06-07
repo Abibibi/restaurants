@@ -1,8 +1,12 @@
-@import "src/styles/variables"
+@import "src/styles/env"
 
 .records
     +flex-column
     align-items: center
+
+    @include tablet-and-desktop
+        flex: 1 0 0
+        margin-right: 2rem
 
     .ais-InfiniteHits
         &-loadMore
@@ -16,9 +20,18 @@
             font-weight: 600
             letter-spacing: .15rem
 
-    .ais-Hits-list
-        +flex-column
-        gap: 2rem
+            &--disabled
+                display: none
+
+    .ais-Hits, .ais-InfiniteHits
+        width: 100%
+
+        &-list
+            +flex-column
+            gap: 2rem
+
+            @include phone
+                margin: 1rem
 
     .ais-Pagination
         margin: 1rem 0
@@ -29,27 +42,34 @@
             font-family: sans-serif
 
         &-item
-            padding: .4rem
-
-            &:hover, &--selected
-                border-radius: .2rem
-
-            &:hover
-                background-color: #d0d0d0
-
             &--selected
-                background-color: #8b0304
-
-                &:hover
-                    background-color: #8b0304
-
                 .ais-Pagination-link
+                    border-radius: .2rem
+                    border-color: #8b0304
+                    background-color: #8b0304
                     color: #ffffff
 
+                    &:hover
+                        background-color: #8b0304
+
             &--previousPage, &--nextPage
-                &:hover
-                    background-color: initial
+                .ais-Pagination-link
+                    &:hover
+                        background-color: initial
+            &--disabled
+                opacity: .6
 
         &-link
             text-decoration: none
             color: initial
+            +flex-center
+            width: 1.3rem
+            height: 1.3rem
+            padding: .4rem
+            border: 1px solid #d0d0d0
+
+            &:hover
+                border-radius: .2rem
+                background-color: #d0d0d0
+
+

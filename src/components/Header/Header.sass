@@ -1,8 +1,11 @@
-@import "src/styles/media"
+@import "src/styles/env"
 
 .header
     &-logo
-        margin: 1.5rem
+        margin: 1rem
+
+        @include tablet-and-desktop
+            margin: 1.5rem
 
         svg
             width: 9rem
@@ -18,7 +21,7 @@
     h1
         margin-top: 5rem
         width: 100%
-        padding: 1rem
+        padding: 1rem 0
         text-align: center
         color: #ffffff
         font-size: 3rem
@@ -28,7 +31,8 @@
             font-size: 4rem
 
     .ais-SearchBox
-        width: 70%
+        margin-top: 2rem
+        width: 60%
 
         &-form
             position: relative
