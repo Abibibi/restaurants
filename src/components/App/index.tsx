@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import algoliasearch from "algoliasearch/lite";
 import { InstantSearch } from "react-instantsearch-hooks-web";
 import { BsFilterSquare } from "react-icons/bs";
 
@@ -12,10 +11,7 @@ import FacetsMobile from "@/components/Facets/FacetsMobile";
 import { Mobile, TabletOrDesktop } from "@/helpers/media";
 import "./App.sass";
 
-const searchClient = algoliasearch(
-  import.meta.env.VITE_APP_ID,
-  import.meta.env.VITE_API_KEY
-);
+import { searchClient } from "@/helpers/algolia";
 
 const App: FC = () => {
   const [isFilter, setIsFilter] = useState<boolean>(false);

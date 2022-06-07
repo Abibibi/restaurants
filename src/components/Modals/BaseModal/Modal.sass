@@ -1,0 +1,45 @@
+@import 'src/styles/variables'
+
+.modal
+    position: fixed
+    background-color: #0000004a
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    +flex-center
+
+    &::-webkit-scrollbar
+        display: none
+
+    &-content
+        +flex-column
+        padding: 1.5rem
+        background-color: #ffffff
+
+        h1
+            padding-bottom: 1rem
+            border-bottom: 1px solid #8b0303
+            font-size: 1.4rem
+            font-weight: 600
+
+            & + div
+                margin: 2rem 0
+
+    &-buttons
+        +flex-center
+        gap: 1rem
+
+        button
+            cursor: pointer
+            background-color: #ffffff
+            padding: .5rem
+
+        &-cancel
+            border: none
+
+            &:hover
+                text-decoration: underline
+
+        &-confirm
+            border: 1px solid #000000
