@@ -54,7 +54,12 @@ const AddRecord: FC = () => {
 
       index
         .saveObject(
-          { ...newRecord, reviews_count: 0 },
+          {
+            ...newRecord,
+            reviews_count: 0,
+            image_url:
+              "https://cdn.otstatic.com/legacy-cw/default2-original.png",
+          },
           { autoGenerateObjectIDIfNotExist: true }
         )
         .then(() => {
