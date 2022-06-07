@@ -12,6 +12,7 @@ const searchClient = algoliasearch(
 );
 
 const App: FC = () => {
+  const [isFilter, setIsFilter] = useState<boolean>(false);
   return (
     <InstantSearch
       searchClient={searchClient}
